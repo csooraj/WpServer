@@ -20,9 +20,11 @@ app.use('/', express.static(__dirname));
 
 app.use(cors());
 
-app.listen(3000,function(){
-  console.log("Started on PORT 3000");
-})
+// app.listen(3000,function(){
+//   console.log("Started on PORT 3000");
+// })
+
+app.listen(process.env.PORT || 3000);
 
 app.post('/newproject',function(req,res) {
   var appName = req.body.appName;
